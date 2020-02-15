@@ -1,6 +1,8 @@
-<h1>Новости по категориям: </h1>
+<h1>Новости по категориям:</h1>
 <ul>
   <li *ngFor="let category of categories">
-    <a routerLink="">{{ category.name }}</a>
+    <a [routerLink]="['/categories', category.id]">
+      {{ category.name }}
+    </a>
   </li>
 </ul>

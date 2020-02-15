@@ -6,7 +6,7 @@ import { NewsListComponent } from './news-list/news-list.component';
 
 const routes: Routes = [
   { path: "categories", component: NewsCategoriesComponent },
-  { path: "categories/:categoryId/news", component: NewsListComponent },
+  { path: "categories/:id", component: NewsListComponent },
   { path: "", redirectTo: "/categories", pathMatch: "full" },
   { path: "**", component: PageNotFoundComponent }
 ];

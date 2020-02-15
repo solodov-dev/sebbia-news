@@ -3,6 +3,7 @@ import { baseUrl, headers } from "./api.config";
 import { HttpClient } from "@angular/common/http";
 import { Category, News } from "./interfaces";
 import { map } from "rxjs/operators";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -16,9 +17,9 @@ export class ApiService {
       .pipe(map(response => response["list"]));
   }
 
-  getNews(categoryId: number) {
+  getNews(id: number): Observable<News[]> {
     return this.http
-      .get<News[]>(`${baseUrl}/categories/${categoryId}/news`, headers)
+      .get<News[]>(`${baseUrl}/categories/${id}/news`, headers)
       .pipe(map(response => response["list"]));
   }
 }
