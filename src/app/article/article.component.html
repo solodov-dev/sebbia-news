@@ -1,5 +1,6 @@
 <div>
   <h1>{{ getArticleInfo("title") }}</h1>
-  <h3>{{ getArticleInfo("title") }}</h3>
+  <h3>{{ getArticleInfo("date") | date:'medium':'ru'}}</h3>
+  <h4>{{ getArticleInfo("title") }}</h4>
   <article [innerHTML]="article['fullDescription']"></article>
 </div>

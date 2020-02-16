@@ -1,19 +1,22 @@
 <ul class="pager">
-  <li class="pager__button"><a routerLink="/categories">Категории</a></li >
-  <li class="pager__button" *ngIf="currentPage" (click)="changePage(-1)"><< Назад</li>
-  <li class="pager__button" *ngIf="news.length == 10" (click)="changePage(+1)">Вперед >></li>
+  <li class="pager__button"><a routerLink="/categories">Категории</a></li>
+  <li class="pager__button" *ngIf="currentPage && !loading" (click)="changePage(-1)">
+    << Назад
+  </li>
+  <li class="pager__button" *ngIf="news.length == 10 && !loading" (click)="changePage(+1)">
+    Вперед >>
+  </li>
 </ul>
 
-
 <ul class="news">
-<li class="news__item" *ngIf="!news.length">Конец новостной ленты</li>
+  <li class="news__item" *ngIf="!news.length && !loading">Конец новостной ленты</li>
   <li class="news__item" *ngFor="let item of news">
     <a
       [routerLink]="['/news', item.id]"
-      [state]="{ title: item.title, description: item.shortDescription }"
+      [state]="{ title: item.title, description: item.shortDescription, date: item.date }"
       >{{ item.title }}
     </a>
-    <p class="news__date">{{ item.date | date:'medium':'ru'}}</p>
+    <p class="news__date">{{ item.date | date: "medium":"ru" }}</p>
     <p class="news__description">{{ item.shortDescription }}</p>
   </li>
 </ul>

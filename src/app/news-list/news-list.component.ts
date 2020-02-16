@@ -8,9 +8,10 @@ import { ActivatedRoute } from "@angular/router";
   templateUrl: "./news-list.component.html",
   styleUrls: ["./news-list.component.css"]
 })
-export class NewsListComponent implements OnInit{
+export class NewsListComponent implements OnInit {
   currentPage: number;
   news: News[] = [];
+  loading: boolean = false;
 
   constructor(private apiService: ApiService, private route: ActivatedRoute) {}
 
@@ -20,10 +21,14 @@ export class NewsListComponent implements OnInit{
   }
 
   getNews(page: number): void {
+    this.loading = true;
     this.route.paramMap.subscribe(params => {
       this.apiService
         .getNews(+params.get("id"), page)
-        .subscribe((res: News[]) => (this.news = res));
+        .subscribe((res: News[]) => {
+          this.news = res;
+          this.loading = false;
+        });
     });
   }
 
