@@ -1,6 +1,5 @@
-<h1>Новости по категориям:</h1>
-<ul>
-  <li *ngFor="let category of categories">
+<ul class="categories">
+  <li class="category" *ngFor="let category of categories">
     <a [routerLink]="['/categories', category.id]">
       {{ category.name }}
     </a>

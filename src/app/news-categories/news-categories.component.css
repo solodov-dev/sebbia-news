@@ -1,0 +1,25 @@
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+ul>li {
+  margin: .3em;
+  padding: .2em;
+}
+
+ul > li > a{
+  background-color: #70bfff;
+  color: white;
+  width: 80%;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  padding: .2em;
+}
+
+ul > li > a:hover {
+  background-color: #4daefd;
+}

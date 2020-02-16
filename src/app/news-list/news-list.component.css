@@ -1,0 +1,50 @@
+.pager {
+  display: flex;
+  justify-content: center;
+}
+
+.pager__button {
+  cursor: pointer;
+  background-color: #70bfff;
+  color: #fff;
+  margin: 1em;
+  padding: .5em 1em;
+  border-radius: 5px;
+}
+
+.pager__button > a {
+  color: #fff;
+}
+
+.pager__button:hover {
+  background-color: #4daefd;
+}
+
+.news {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.news__item {
+  margin: 1em;
+  padding: 1em;
+  width: 80%;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px lightgray;
+} 
+
+.news__item > a {
+  color: #6d6d6d;
+  text-transform: uppercase;
+}
+
+.news__date {
+  font-size: .8em;
+  padding: .3em 0;
+  color: #4daefd; 
+}
+
+.news__description {
+  margin-top: 1em;
+}

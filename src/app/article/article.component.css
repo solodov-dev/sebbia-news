@@ -1,0 +1,22 @@
+div {
+  padding: 1em;
+  width: 80%;
+  margin: 20px auto;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px lightgray;
+}
+
+h1 {
+  color: gray;
+  font-size: 1.5em;
+  margin: 1em 0;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+article {
+  margin: .7em 0;
+}
+

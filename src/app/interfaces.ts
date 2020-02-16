@@ -7,7 +7,15 @@ interface News {
   id: number,
   title: string,
   date: string,
-  description: string,
+  shortDescription: string,
 }
 
-export {Category, News}
+interface Article {
+  id: number,
+  fullDescription: string,
+  date: string,
+  shortDescription: string,
+  title: string
+}
+
+export {Category, News, Article}
